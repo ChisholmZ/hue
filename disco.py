@@ -7,6 +7,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--group', '-G', help='Hue Light Group', type=int, default=1)
 parser.add_argument('--duration', '-D', help='Duration of color in seconds', type=int, default=2)
+parser.add_argument('--brightness', '-B', help='Brightness 0 - 254', type=int, default=254)
 
 args = parser.parse_args()
 
@@ -20,6 +21,7 @@ i=0
 def color():
     for l in group:
         lights[int(l)].on = True
+        lights[int(l)].brightness = args.brightness
         lights[int(l)].xy = [random.random(),random.random()]
     sleep(args.duration)
 
