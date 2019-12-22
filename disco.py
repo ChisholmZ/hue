@@ -19,6 +19,7 @@ i=0
 # change colors
 def color():
     for l in group:
+        lights[int(l)].on = True
         lights[int(l)].xy = [random.random(),random.random()]
     sleep(args.duration)
 

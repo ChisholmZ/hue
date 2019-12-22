@@ -21,6 +21,7 @@ i=0
 # change colors
 def color(color1, color2):
     for l in group:
+        lights[int(l)].on = True
         lights[int(l)].xy = color1 if (int(l) % 2) == 0 else color2
     sleep(args.duration)
 
